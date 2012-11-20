@@ -25,9 +25,6 @@ Let U, V, W be three byte arrays such that W is the concatenation of U and V. Th
 
 is true. This property also holds when concatenating more than two byte arrays. 
 
----
-
-
 The basic idea of a Tillich-Zemor hash function is described in the paper:
 
 - [**Hashing with SL 2**](http://dx.doi.org/10.1007/3-540-48658-5_5)    
