@@ -19,7 +19,7 @@ It mainly provides the following four functions in the namespace *phlegmaticprog
 
 The special thing about this hash function is that it is __composable__: 
 
-Let U, V, W be three byte arrays such that W is the concatenation of U and W. Then 
+Let U, V, W be three byte arrays such that W is the concatenation of U and V. Then 
 
     (= (hashbytes W) (hashcomb (hashbytes U) (hashbytes V)))
 
