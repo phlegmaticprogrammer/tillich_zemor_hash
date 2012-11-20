@@ -2,6 +2,10 @@
 
 Implementation of Tillich-Zemor hashing in Clojure/Java.
 
+To use it, build with Leiningen and include the following dependency in your Clojure project:
+
+    [phlegmaticprogrammer/tillich_zemor_hash "1.0.0"]
+
 It mainly provides the following four functions in the namespace *phlegmaticprogrammer.tillich_zemor_hash* :
 
 - (hashbytes b)  
