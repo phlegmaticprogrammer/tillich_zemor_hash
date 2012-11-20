@@ -52,6 +52,7 @@ and has the hard-wired modulus
 It uses an optimized version of 2.3.3 and 2.3.5 for multiplication/reduction.
 
 ---
+## License
 
 Copyright (C) 2012 Steven Obua
 
