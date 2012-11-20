@@ -1,21 +1,8 @@
 (ns phlegmaticprogrammer.tillich_zemor_hash
-  (:import [java.io File FileOutputStream FileInputStream ByteArrayOutputStream])
-  (:import [java.security MessageDigest])
   (:import [phlegmaticprogrammer.tillich_zemor_hash GL2p127])
-  (:require [clojure.java.io :as io])
   (:use clojure.test))
 
 (defn illegal [s] (throw (IllegalArgumentException. s)))
-
-(defn vec-concat [& items] (vec (apply concat items)))
-
-(defn vec-replace [v i j coll] (vec-concat (subvec v 0 i) coll (subvec v j)))
-
-(defn equal-byte-arrays [u v] (= (map byte u) (map byte v)))
-
-(def sha1Digest (MessageDigest/getInstance "SHA1"))
-
-(defn sha1 ^bytes [^bytes bytes] (.digest sha1Digest bytes))
 
 (defn- num-to-bits [n]
   (cond
@@ -48,12 +35,6 @@
                       bys)
         ]
     r))
-
-(comment long-to-bits [l]
-  (let [u (if (< l 0) (+ (bigint l) (.pow (BigInteger. "2") 64)) l)
-        bits (num-to-bits u)
-        pad (repeat (- 64 (count bits)) 0)]
-    (vec (concat bits pad))))
 
 (defn long-to-bits [l]
   (let [tob (fn [k]
