@@ -214,7 +214,7 @@
 (def TillichZemor127 (TillichZemorHash binaryField127))
 (def DefaultAssocHash TillichZemor127)
 
-(def SlowAssocHash (TillichZemorHash (naiveBinaryField sha1-like)))
+(defn SlowAssocHash [] (TillichZemorHash (naiveBinaryField sha1-like)))
 
 (defn rand-bytes [n]
   (byte-array n
@@ -237,7 +237,7 @@
     (and (= U1 UU1) (= (vec u1) (vec u2)))))
 
 (deftest hash-functions
-  (let [test (fn [n] (is (rand-test DefaultAssocHash SlowAssocHash n)))]
+  (let [test (fn [n] (is (rand-test DefaultAssocHash (SlowAssocHash) n)))]
     (test 0)
     (test 1)
     (test 2)
