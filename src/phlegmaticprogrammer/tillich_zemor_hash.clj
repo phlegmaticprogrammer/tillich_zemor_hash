@@ -1,6 +1,11 @@
 (ns phlegmaticprogrammer.tillich_zemor_hash
   (:import [phlegmaticprogrammer.tillich_zemor_hash GL2p127])
+  (:import [java.security MessageDigest])
   (:use clojure.test))
+
+(def sha1Digest (MessageDigest/getInstance "SHA1"))
+
+(defn sha1 ^bytes [^bytes bytes] (.digest sha1Digest bytes))
 
 (defn illegal [s] (throw (IllegalArgumentException. s)))
 
